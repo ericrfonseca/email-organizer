@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  email-organizer:
+    build: .
+    container_name: email-organizer
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
